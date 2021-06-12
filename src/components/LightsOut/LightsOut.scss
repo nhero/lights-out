@@ -1,0 +1,83 @@
+$base: green;
+$base-color-id: 100;
+$base-color-id: 250;
+$base-10: hsl($base-color-id, 50%, 10%);
+$base-20: hsl($base-color-id, 50%, 20%);
+$base-30: hsl($base-color-id, 50%, 30%);
+$base-40: hsl($base-color-id, 50%, 40%);
+$base-50: hsl($base-color-id, 50%, 50%);
+$base-60: hsl($base-color-id, 50%, 60%);
+$base-70: hsl($base-color-id, 50%, 70%);
+$base-80: hsl($base-color-id, 50%, 80%);
+$base-90: hsl($base-color-id, 50%, 90%);
+$base-100: hsl($base-color-id, 50%, 100%);
+
+$alternate-color-id: 75;
+$alternate-10: hsl($alternate-color-id, 50%, 10%);
+$alternate-20: hsl($alternate-color-id, 50%, 20%);
+$alternate-30: hsl($alternate-color-id, 50%, 30%);
+$alternate-40: hsl($alternate-color-id, 50%, 40%);
+$alternate-50: hsl($alternate-color-id, 50%, 50%);
+$alternate-60: hsl($alternate-color-id, 50%, 60%);
+$alternate-70: hsl($alternate-color-id, 50%, 70%);
+$alternate-80: hsl($alternate-color-id, 50%, 80%);
+$alternate-90: hsl($alternate-color-id, 50%, 90%);
+$alternate-100: hsl($alternate-color-id, 50%, 100%);
+
+$hover-color-id: 30;
+$hover-10: hsl($hover-color-id, 50%, 10%);
+$hover-20: hsl($hover-color-id, 50%, 20%);
+$hover-30: hsl($hover-color-id, 50%, 30%);
+$hover-40: hsl($hover-color-id, 50%, 40%);
+$hover-50: hsl($hover-color-id, 50%, 50%);
+$hover-60: hsl($hover-color-id, 50%, 60%);
+$hover-70: hsl($hover-color-id, 50%, 70%);
+$hover-80: hsl($hover-color-id, 50%, 80%);
+$hover-90: hsl($hover-color-id, 50%, 90%);
+$hover-100: hsl($hover-color-id, 50%, 100%);
+
+.LightsOut {
+  border: 2px solid $base;
+  margin: 20px;
+  width: 500px;
+  background-color: $base-20;
+  border-radius: 5px;
+  margin: auto;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 2px solid $base;
+    width: 100px;
+    height: 100px;
+    border-radius: 5%;
+    background-color: $base-20;
+    margin: 4px;
+
+    &.shadow {
+      border: 2px solid $base-40;
+
+      &:hover {
+        border: 2px solid $base-80;
+      }
+
+      &.on {
+        border-color: $alternate-40;
+        background-color: $alternate-80;
+        outline-color: $alternate-60;
+        box-shadow: 2px 2px 7px 2px $alternate-20;
+
+        &:hover {
+          border: 2px solid $alternate-80;
+        }
+      }
+    }
+  }
+}
