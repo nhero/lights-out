@@ -1,4 +1,4 @@
-$base: green;
+$base: #4caf50;
 $base-color-id: 100;
 $base-color-id: 250;
 $base-10: hsl($base-color-id, 50%, 10%);
@@ -24,17 +24,18 @@ $alternate-80: hsl($alternate-color-id, 50%, 80%);
 $alternate-90: hsl($alternate-color-id, 50%, 90%);
 $alternate-100: hsl($alternate-color-id, 50%, 100%);
 
-$hover-color-id: 30;
-$hover-10: hsl($hover-color-id, 50%, 10%);
-$hover-20: hsl($hover-color-id, 50%, 20%);
-$hover-30: hsl($hover-color-id, 50%, 30%);
-$hover-40: hsl($hover-color-id, 50%, 40%);
-$hover-50: hsl($hover-color-id, 50%, 50%);
-$hover-60: hsl($hover-color-id, 50%, 60%);
-$hover-70: hsl($hover-color-id, 50%, 70%);
-$hover-80: hsl($hover-color-id, 50%, 80%);
-$hover-90: hsl($hover-color-id, 50%, 90%);
-$hover-100: hsl($hover-color-id, 50%, 100%);
+button {
+  background-color: $base;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-bottom: 32px;
+}
 
 .LightsOut {
   border: 2px solid $base;
