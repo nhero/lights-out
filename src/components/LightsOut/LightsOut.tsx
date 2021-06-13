@@ -4,11 +4,11 @@ import "./LightsOut.scss";
 const LightsOut: React.FC = () => {
   const getInitialGrid = () => {
     let grid = [];
-    grid[0] = [false, false, true, true, true];
-    grid[1] = [true, true, false, false, true];
-    grid[2] = [false, true, true, true, true];
-    grid[3] = [true, true, true, true, false];
-    grid[4] = [true, true, false, false, true];
+    grid[0] = [true, false, false, false, true];
+    grid[1] = [false, true, false, true, false];
+    grid[2] = [false, false, true, false, false];
+    grid[3] = [false, true, false, true, false];
+    grid[4] = [true, false, false, false, true];
 
     return grid;
   };
@@ -40,7 +40,7 @@ const LightsOut: React.FC = () => {
       swapStatus(rowId, colId - 1);
     }
     swapStatus(rowId, colId);
-    if (colId + 1 >= 0) {
+    if (colId + 1 < 5) {
       swapStatus(rowId, colId + 1);
     }
 
@@ -57,21 +57,13 @@ const LightsOut: React.FC = () => {
     let toggleClass;
     for (let col = 0; col < numCols; col++) {
       toggleClass = rows[rowId][col] === false ? "off" : "on";
-      if (col % 2 === 0) {
-        columnData.push(
-          <div
-            onClick={() => updateMatrix(rows[rowId][col], rowId, col)}
-            className={`col shadow ${toggleClass}`}
-          ></div>
-        );
-      } else {
-        columnData.push(
-          <div
-            onClick={() => updateMatrix(rows[rowId][col], rowId, col)}
-            className={`col shadow ${toggleClass}`}
-          ></div>
-        );
-      }
+      columnData.push(
+        <div
+          key={`${rowId}-${col}`}
+          onClick={() => updateMatrix(rows[rowId][col], rowId, col)}
+          className={`col shadow ${toggleClass}`}
+        ></div>
+      );
     }
 
     return columnData;
@@ -102,7 +94,11 @@ const LightsOut: React.FC = () => {
     let rowData = [];
 
     for (let row = 0; row < 5; row++) {
-      rowData.push(<div className="row">{getCols(row, numCols)}</div>);
+      rowData.push(
+        <div className="row" key={row}>
+          {getCols(row, numCols)}
+        </div>
+      );
     }
 
     return <React.Fragment>{rowData}</React.Fragment>;
